@@ -38,13 +38,16 @@ export default class DashboardComponent implements OnInit {
   }
 
   loadClickCount(): void {
-    // Directly link signals from service to component's signals
-    this.clickCounts.about =
-      this.dashboardService.getClickCountsSignal('about');
-    this.clickCounts.news = this.dashboardService.getClickCountsSignal('news');
-    this.clickCounts.contact =
-      this.dashboardService.getClickCountsSignal('contact');
-    this.clickCounts.dashboard =
-      this.dashboardService.getClickCountsSignal('dashboard');
+    // Assuming 'clickCounts' and the service return the same keys ('about', 'news', 'contact', 'dashboard')
+    const keys: (keyof IClickCounts)[] = [
+      'about',
+      'news',
+      'contact',
+      'dashboard',
+    ];
+
+    keys.forEach((key) => {
+      this.clickCounts[key] = this.dashboardService.getClickCountsSignal(key);
+    });
   }
 }
