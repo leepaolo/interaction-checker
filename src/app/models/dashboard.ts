@@ -6,3 +6,7 @@ export interface IClickCounts {
   contact: WritableSignal<number>;
   dashboard: WritableSignal<number>;
 }
+
+export interface IClickFormCounts {
+  buttonSend: WritableSignal<number>;
+}

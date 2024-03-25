@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, WritableSignal, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
-import { DashboardService } from '../../services/dashboard.service';
-import { IClickCounts } from '../../models/navbar';
+import { DashboardService } from '../../services/track-navbar.service';
+import { IClickCounts } from '../../models/dashboard';
 
 @Component({
   selector: 'app-navbar',

@@ -1,6 +1,6 @@
 import { Injectable, signal } from '@angular/core';
-import { WritableSignal } from '@angular/core'; // Assuming WritableSignal is correctly imported from '@angular/core'
-import { IClickCounts } from '../models/navbar';
+import { WritableSignal } from '@angular/core';
+import { IClickCounts } from '../models/dashboard';
 
 @Injectable({
   providedIn: 'root',

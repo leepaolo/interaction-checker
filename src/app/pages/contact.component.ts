@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { TrackFormService } from '../services/track-form.service';
 
 @Component({
   selector: 'app-contact',
@@ -29,7 +30,7 @@ import {
           class="input input-bordered input-primary w-full max-w-xs"
         />
         <button
-          (click)="sendFrom()"
+          (click)="onSendForm()"
           [disabled]="formContact.invalid"
           class="btn btn-primary w-full max-w-xs"
         >
@@ -40,12 +41,17 @@ import {
   `,
 })
 export default class ContactComponent {
+  trackFormService = inject(TrackFormService);
+
   formContact = new FormGroup({
     name: new FormControl('', Validators.required), // Apply the required validator
     email: new FormControl('', [Validators.required, Validators.email]), // Apply both required and email validators
   });
 
-  sendFrom() {
-    alert(JSON.stringify(this.formContact.value));
+  onSendForm(): void {
+    if (!this.formContact.invalid) {
+      this.trackFormService.incrementClickCount();
+      alert(JSON.stringify(this.formContact.value));
+    }
   }
 }

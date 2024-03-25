@@ -1,3 +1,5 @@
+LINK ChatGpt https://chat.openai.com/share/bac6326c-1cb7-4d7a-80ea-b5f7670d2f59
+
 1. User Engagement Metrics
    Bounce Rate: Measure the percentage of visitors who navigate away from the site after viewing only one page. This can help you understand the initial impact of your site.
    Average Session Duration: Track how long users stay on your site, providing insights into engagement.
