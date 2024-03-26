@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, WritableSignal, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
-import { DashboardService } from '../../services/track-navbar.service';
+import { TrackNavbarService } from '../../services/track-navbar.service';
 import { IClickCounts } from '../../models/dashboard';
 
 @Component({
@@ -60,11 +60,11 @@ import { IClickCounts } from '../../models/dashboard';
   </div>`,
 })
 export default class NavbarComponent {
-  private dashboardService = inject(DashboardService);
+  private trackNavbarService = inject(TrackNavbarService);
 
-  trackClickNavBar(buttonName: string) {
-    let button = buttonName as keyof IClickCounts;
+  trackClickNavBar(btnName: string) {
+    let btn = btnName as keyof IClickCounts;
 
-    this.dashboardService.incrementClickCount(button);
+    this.trackNavbarService.incClickCount(btn);
   }
 }

@@ -9,4 +9,5 @@ export interface IClickCounts {
 
 export interface IClickFormCounts {
   buttonSend: WritableSignal<number>;
+  buttonReset: WritableSignal<number>;
 }

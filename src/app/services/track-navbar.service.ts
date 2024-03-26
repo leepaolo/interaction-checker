@@ -5,7 +5,7 @@ import { IClickCounts } from '../models/dashboard';
 @Injectable({
   providedIn: 'root',
 })
-export class DashboardService {
+export class TrackNavbarService {
   private clickCounts: IClickCounts = {
     about: signal(0),
     news: signal(0),
@@ -13,21 +13,17 @@ export class DashboardService {
     dashboard: signal(0),
   };
 
-  incrementClickCount(buttonName: keyof IClickCounts): void {
+  incClickCount(btn: keyof IClickCounts): void {
     // Check if the provided buttonName is a valid property of clickCounts
-    if (this.clickCounts.hasOwnProperty(buttonName)) {
-      this.clickCounts[buttonName].update((count) => count + 1);
+    if (this.clickCounts.hasOwnProperty(btn)) {
+      this.clickCounts[btn].update((count) => count + 1);
     } else {
-      console.error(`No such property as ${buttonName} in clickCounts`);
+      console.error(`No such property as ${btn} in clickCounts`);
     }
   }
 
-  getClickCount(buttonName: keyof IClickCounts): number {
-    return this.clickCounts[buttonName]();
-  }
-
-  getClickCountsSignal(buttonName: keyof IClickCounts): WritableSignal<number> {
-    return this.clickCounts[buttonName];
+  getClickCounts(btn: keyof IClickCounts): WritableSignal<number> {
+    return this.clickCounts[btn];
   }
   constructor() {}
 }
