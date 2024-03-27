@@ -8,7 +8,7 @@ import { IClickCounts } from '../models/dashboard';
 export class TrackNavbarService {
   private clickCounts: IClickCounts = {
     about: signal(0),
-    news: signal(0),
+    work: signal(0),
     contact: signal(0),
     dashboard: signal(0),
   };

@@ -10,7 +10,8 @@ export class TrackFormService {
     buttonReset: signal(0),
   };
 
-  incrementClickCount(btn: keyof IClickFormCounts): void {
+  // INCREMENT BUTTON LOGIC
+  incClickCount(btn: keyof IClickFormCounts): void {
     if (this.clickCounts.hasOwnProperty(btn)) {
       this.clickCounts[btn].update((count) => count + 1);
     } else {
@@ -18,12 +19,13 @@ export class TrackFormService {
     }
   }
 
+  // GET COUNT BUTTON LOGIC
   getCountClicks(btn: keyof IClickFormCounts): WritableSignal<number> {
     return this.clickCounts[btn];
   }
 
-  // New reset logic for button click counts
-  resetClickCount(btn: keyof IClickFormCounts): void {
+  // RESET BUTTON LOGIC
+  resClickCount(btn: keyof IClickFormCounts): void {
     if (this.clickCounts.hasOwnProperty(btn)) {
       this.clickCounts[btn].update((count) => count + 1);
       console.log(this.clickCounts[btn]());

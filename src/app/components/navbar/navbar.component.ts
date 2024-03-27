@@ -37,8 +37,8 @@ import { IClickCounts } from '../../models/dashboard';
             About me
           </button>
         </li>
-        <li routerLink="news">
-          <button class="btn btn-primary" (click)="trackClickNavBar('news')">
+        <li routerLink="work">
+          <button class="btn btn-primary" (click)="trackClickNavBar('work')">
             Work
           </button>
         </li>

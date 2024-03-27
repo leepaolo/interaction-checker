@@ -59,13 +59,13 @@ export default class ContactComponent {
     let btn = btnName as keyof IClickFormCounts;
 
     if (!this.formContact.invalid) {
-      this.trackFormService.incrementClickCount(btn);
+      this.trackFormService.incClickCount(btn);
       alert(JSON.stringify(this.formContact.value));
     }
   }
 
   onResetForm(btnName: keyof IClickFormCounts) {
-    this.trackFormService.resetClickCount(btnName); // Reset the click count
+    this.trackFormService.resClickCount(btnName); // Reset the click count
     this.formContact.reset(); // Reset the form fields
   }
 }

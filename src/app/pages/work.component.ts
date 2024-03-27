@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-news',
+  selector: 'app-work',
   standalone: true,
   imports: [CommonModule],
   template: `
@@ -18,4 +18,4 @@ import { Component } from '@angular/core';
     </div>
   `,
 })
-export default class NewsComponent {}
+export default class WorkComponent {}
