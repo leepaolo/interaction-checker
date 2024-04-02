@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { TrackPagesService } from './services/track-pages.service';
-import NavbarComponent from './components/navbar/navbar.component';
+import NavbarComponent from './components/navbar.component';
 import DashboardComponent from './pages/dashboard.component';
 
 @Component({
